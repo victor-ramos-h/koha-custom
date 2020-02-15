@@ -1,24 +1,14 @@
-version: '2.3'
+version: '3'
 services:
     koha:
-        image: adp/koha-dev:1.0.2
+        image: koha-adp
         tty: true    
         cap_add: 
             - ALL
-        ports:
-            - "8081:80"
-            - "8082:8080"
-#        volumes: 
-#            - ./volume/kohadb:/kohadevbox/koha
-        depends_on:
-            - db
-
-    db:
-        image: mariadb
-        restart: always
-        environment:
-            MYSQL_ROOT_PASSWORD: mBadp2019!
         ports: 
-            - "3306:3306"
-        volumes:
-            - ./volume/mysql:/var/lib/mysql
+            - "3308:3306"
+            - "8088:8080"
+            - "8089:80"
+            - "8087:8081"
+        volumes: 
+            - ./volume/kohadb:/kohadevbox/koha
