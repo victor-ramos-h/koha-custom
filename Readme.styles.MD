@@ -3,7 +3,7 @@ Todos los cambios se los realiza en > Administración > Preferencias del Sistema
 
 ## Banner
 Buscar opac header y editar
-´´´
+```
 <div class="cabecera" style="background: #dcead3; float: left; width: 100%;">
 	<div>
 		<div style="float:left">
@@ -25,4 +25,4 @@ Buscar opac header y editar
 	</div>
   
 </div>
-´´´
+```
