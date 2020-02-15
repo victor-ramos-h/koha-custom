@@ -53,3 +53,11 @@ Buscar 'opac favicon' y editar
 ```
 http://www.cancilleria.gob.bo/webmre/sites/all/themes/bootstrap2/favicon.ico
 ```
+
+## Estilos
+Buscar 'opac user css' y editar
+```
+#logo {
+   display: none;
+}
+```
