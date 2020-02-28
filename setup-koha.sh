@@ -2,7 +2,7 @@
 
 set -e
 
-#docker load < koha-adp-image.tar.gz
+docker load < koha-adp-image.tar.gz
 docker-compose up -d db
 echo "Configuring Database..."
 sleep 2m
