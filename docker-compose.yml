@@ -1,14 +1,30 @@
-version: '3'
+version: '2.3'
 services:
     koha:
-        image: koha-adp
+        image: adp/koha:0.1.1
         tty: true    
         cap_add: 
             - ALL
-        ports: 
-            - "3308:3306"
-            - "8088:8080"
-            - "8089:80"
-            - "8087:8081"
+        ports:
+            - "8081:80"
+            - "8082:8080"
         volumes: 
             - ./volume/kohadb:/kohadevbox/koha
+        depends_on:
+            - db
+            - memcached
+
+    db:
+        image: mariadb        
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: mBadp2019!
+        ports: 
+            - "3306:3306"
+        volumes:
+            - ./volume/mysql:/var/lib/mysql
+
+    memcached:
+        image: memcached
+        command: memcached -m 64m
+        

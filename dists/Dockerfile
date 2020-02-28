@@ -1,9 +1,6 @@
 # Base it on Debian 9
 FROM debian:stretch
 
-# File Author / Maintainer
-LABEL maintainer="tomascohen@theke.io"
-
 ENV PATH /usr/bin:/bin:/usr/sbin:/sbin
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -164,4 +161,4 @@ COPY env/defaults.env /kohadevbox/templates/defaults.env
 
 CMD ["/bin/bash", "/kohadevbox/run0.sh"]
 
-EXPOSE 8080 8081
+EXPOSE 8080
