@@ -2,7 +2,7 @@
 
 set -e
 
-#docker load < koha-adp-image.tar.gz
+docker load < koha-adp-image.tar.gz
 docker-compose up -d db
 echo "Configuring Database..."
 sleep 2m
@@ -12,3 +12,4 @@ docker-compose exec -T db mysql -u root -pmBadp2019! koha_adp < koha_adp.sql
 docker-compose exec -T db mysql -u root -pmBadp2019! -e "FLUSH PRIVILEGES;"
 docker-compose up -d koha
 docker-compose exec -T koha koha-zebra --start adp
+docker-compose exec -T koha koha-indexer --start adp
